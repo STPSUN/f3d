@@ -14,7 +14,7 @@ return [
 //    'hostname'        => '127.0.0.1',
 //    'hostname'        => '107.174.247.122',
     // 数据库名
-//    'database'        => 'lucky',
+//    'database'        => 'f3d',
 //     用户名
 //    'username'        => 'root',
 //     密码
