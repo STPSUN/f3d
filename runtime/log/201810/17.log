@@ -1,0 +1,954 @@
+---------------------------------------------------------------
+[ 2018-10-17T17:46:52+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.146132s][吞吐率：6.84req/s] [内存消耗：625.09kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.001349s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000762s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.001095s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000902s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:52+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.142771s][吞吐率：7.00req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000945s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000893s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.001066s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000475s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:53+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.181469s][吞吐率：5.51req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000889s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000753s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000181s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000467s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:53+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.245890s][吞吐率：4.07req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000863s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000526s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000527s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:53+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.138230s][吞吐率：7.23req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000906s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.001021s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000535s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:53+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.153713s][吞吐率：6.51req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.001008s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000818s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000528s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:54+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.147587s][吞吐率：6.78req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.001377s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000747s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.001009s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000806s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:54+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.138800s][吞吐率：7.20req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000932s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000588s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000453s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:54+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.138206s][吞吐率：7.24req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.001079s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000671s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000793s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:55+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.199190s][吞吐率：5.02req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000864s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000488s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000642s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:55+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.138514s][吞吐率：7.22req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000750s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000555s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000932s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000511s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:55+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.182377s][吞吐率：5.48req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000775s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000483s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000669s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:56+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.137096s][吞吐率：7.29req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000985s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000565s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000478s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:56+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.198660s][吞吐率：5.03req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000827s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000450s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000143s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000607s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:46:56+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：0.135566s][吞吐率：7.38req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000957s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000527s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000703s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:47:02+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：4.664225s][吞吐率：0.21req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000677s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000527s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000180s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000512s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:47:02+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：5.285456s][吞吐率：0.19req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000760s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000380s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000796s ]
+---------------------------------------------------------------
+[ 2018-10-17T17:47:02+00:00 ] 45.77.68.204 221.177.253.29 POST /api/keygame/getBalance
+[ info ] www.luckywinner.vip/api/keygame/getBalance [运行时间：4.433259s][吞吐率：0.23req/s] [内存消耗：624.78kb] [文件加载：64]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.000715s ]
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getBalance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '60',
+  'referer' => 'http://www.luckywinner.vip/app/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=nvsktmtp85pjers4s7a38634s4',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://www.luckywinner.vip',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'host' => 'www.luckywinner.vip',
+)
+[ info ] [ PARAM ] array (
+  'coin_id' => '1',
+  'game_id' => '158',
+  'token' => '27f61e7a5579b4b304f6e68793b4ffb1',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /www/wwwroot/luckywinner.vip/public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getBalance[ /www/wwwroot/luckywinner.vip/web/api/controller/Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000546s ] mysql:dbname=fomo3d;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_account` [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT `address` FROM `tp_member_account` WHERE  `id` = 69 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_coins` [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_coins` [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT SUM(key_num) AS tp_sum FROM `tp_fomo_key_record` WHERE  `user_id` = 69  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (3)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `type` IN (0,1,2)  AND `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = 69  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `tp_fomo_reward_record` WHERE  `user_id` = 69  AND `coin_id` = 1  AND `game_id` = 158 LIMIT 1 [ RunTime:0.000543s ]

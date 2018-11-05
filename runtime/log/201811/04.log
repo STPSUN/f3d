@@ -1,0 +1,1089 @@
+---------------------------------------------------------------
+[ 2018-11-04T17:11:11+08:00 ] 127.0.0.1 127.0.0.1 POST /api/member/login
+[ info ] f3d.com/api/member/login [运行时间：0.216270s][吞吐率：4.62req/s] [内存消耗：2,406.34kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004031s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'member',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/app/',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '35',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/api/member/login' => '',
+  'phone' => '18850705207',
+  'password' => 'a1111111',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] D:\qw\f3d\public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Member->login[ D:\qw\f3d\web\api\controller\Member.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001604s ] mysql:dbname=lucky;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,head_pic,area,phone,address,username from tp_member_account where logic_delete=0 and (phone='18850705207' or username='18850705207') and password='ef209c9343ca8c715265781876657b18' [ RunTime:0.000490s ]
+---------------------------------------------------------------
+[ 2018-11-04T17:11:12+08:00 ] 127.0.0.1 127.0.0.1 POST /api/keygame/getGame
+[ info ] f3d.com/api/keygame/getGame [运行时间：0.499238s][吞吐率：2.00req/s] [内存消耗：2,397.00kb] [文件加载：63]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.007416s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getGame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lvdloqlmoa08hhfspodi19tn10',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/app/',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '2',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/api/keygame/getGame' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] D:\qw\f3d\public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getGame[ D:\qw\f3d\web\api\controller\Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001988s ] mysql:dbname=lucky;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,status,rule_id,coin_id,coin_name,winner_rate,team_rate,fund_rate,drop_total_amount,total_buy_seconds,total_amount,pool_total_amount,release_total_amount,start_time,end_game_time from (select a.* ,b.coin_name from tp_fomo_game a ,tp_coins b where a.status=1 and a.coin_id=b.id) as tab limit 0,1 [ RunTime:0.002305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_game` [ RunTime:0.078302s ]
+[ sql ] [ SQL ] UPDATE `tp_fomo_game`  SET `status`=2,`rule_id`=1,`coin_id`=1,`winner_rate`=3,`team_rate`=2,`fund_rate`=3,`drop_total_amount`=0,`total_buy_seconds`=0,`total_amount`=0,`pool_total_amount`=0.02,`release_total_amount`=0,`start_time`=1541313494,`end_game_time`=1541317094  WHERE  `id` = 22 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_fomo_game` WHERE  `id` = 22 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.028244s ]
+[ sql ] [ SQL ] SELECT `id`,`team_id`,`user_id` FROM `tp_fomo_key_record` WHERE  `game_id` = 22 ORDER BY update_time desc LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.027832s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = null  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000557s ]
+[ sql ] [ SQL ] INSERT INTO `tp_member_balance` (`user_id` , `before_amount` , `amount` , `total_amount` , `coin_id` , `update_time`) VALUES (0 , 0 , 0.0006 , 0.0006 , 1 , '2018-11-04 17:11:12') [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.027545s ]
+[ sql ] [ SQL ] INSERT INTO `tp_fomo_reward_record` (`user_id` , `coin_id` , `amount` , `before_amount` , `after_amount` , `type` , `game_id` , `remark` , `update_time`) VALUES (0 , 1 , 0.0006 , 0 , 0.0006 , 2 , 22 , '胜利者分红' , '2018-11-04 17:11:12') [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2018-11-04T17:11:12+08:00 ] 127.0.0.1 127.0.0.1 POST /api/keygame/getGame
+[ info ] f3d.com/api/keygame/getGame [运行时间：0.664446s][吞吐率：1.51req/s] [内存消耗：2,397.00kb] [文件加载：63]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.010292s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'keygame',
+    2 => 'getGame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lvdloqlmoa08hhfspodi19tn10',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/app/',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '2',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/api/keygame/getGame' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] D:\qw\f3d\public/../web/common/lang/zh-cn.php
+[ info ] [ RUN ] web\api\controller\Keygame->getGame[ D:\qw\f3d\web\api\controller\Keygame.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002112s ] mysql:dbname=lucky;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,status,rule_id,coin_id,coin_name,winner_rate,team_rate,fund_rate,drop_total_amount,total_buy_seconds,total_amount,pool_total_amount,release_total_amount,start_time,end_game_time from (select a.* ,b.coin_name from tp_fomo_game a ,tp_coins b where a.status=1 and a.coin_id=b.id) as tab limit 0,1 [ RunTime:0.001985s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_game` [ RunTime:0.116746s ]
+[ sql ] [ SQL ] UPDATE `tp_fomo_game`  SET `status`=2,`rule_id`=1,`coin_id`=1,`winner_rate`=3,`team_rate`=2,`fund_rate`=3,`drop_total_amount`=0,`total_buy_seconds`=0,`total_amount`=0,`pool_total_amount`=0.02,`release_total_amount`=0,`start_time`=1541313494,`end_game_time`=1541317094  WHERE  `id` = 22 [ RunTime:0.146010s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_fomo_game` WHERE  `id` = 22 LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_key_record` [ RunTime:0.022469s ]
+[ sql ] [ SQL ] SELECT `id`,`team_id`,`user_id` FROM `tp_fomo_key_record` WHERE  `game_id` = 22 ORDER BY update_time desc LIMIT 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member_balance` [ RunTime:0.024616s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member_balance` WHERE  `user_id` = null  AND `coin_id` = 1 LIMIT 1 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] INSERT INTO `tp_member_balance` (`user_id` , `before_amount` , `amount` , `total_amount` , `coin_id` , `update_time`) VALUES (0 , 0 , 0.0006 , 0.0006 , 1 , '2018-11-04 17:11:12') [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_fomo_reward_record` [ RunTime:0.032527s ]
+[ sql ] [ SQL ] INSERT INTO `tp_fomo_reward_record` (`user_id` , `coin_id` , `amount` , `before_amount` , `after_amount` , `type` , `game_id` , `remark` , `update_time`) VALUES (0 , 1 , 0.0006 , 0 , 0.0006 , 2 , 22 , '胜利者分红' , '2018-11-04 17:11:12') [ RunTime:0.000421s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:11:29+08:00 ] 127.0.0.1 127.0.0.1 GET /user
+[ info ] f3d.com/user [运行时间：3.570203s][吞吐率：0.28req/s] [内存消耗：1,441.34kb] [文件加载：52]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.366974s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): connect() failed: ����Ŀ����������ܾ����޷����ӡ�
+[D:\qw\f3d\thinkphp\library\think\cache\driver\Redis.php:51]
+---------------------------------------------------------------
+[ 2018-11-04T23:11:57+08:00 ] 127.0.0.1 127.0.0.1 GET /user
+[ info ] f3d.com/user [运行时间：0.480736s][吞吐率：2.08req/s] [内存消耗：1,621.30kb] [文件加载：52]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.003250s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:11:57+08:00 ] 127.0.0.1 127.0.0.1 GET /user/login.html
+[ info ] f3d.com/user/login.html [运行时间：0.519334s][吞吐率：1.93req/s] [内存消耗：1,820.36kb] [文件加载：57]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.005395s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login_html' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../web/user\view\default\login\index.html [ array (
+  0 => 'SYS_TITLE',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:11:58+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] f3d.com/captcha.html [运行时间：0.288995s][吞吐率：3.46req/s] [内存消耗：1,342.05kb] [文件加载：43]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.005148s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\qw\f3d\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:12:13+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login.html
+[ info ] f3d.com/user/login.html [运行时间：1.956385s][吞吐率：0.51req/s] [内存消耗：2,309.68kb] [文件加载：62]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.002822s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '37',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login_html' => '',
+  'username' => 'admin',
+  'password' => 'lkw998',
+  'code' => '3',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.206746s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='01a668ed75d6c2c15c4402a3a668f8a8' [ RunTime:0.484432s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:12:17+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/index.html
+[ info ] f3d.com/user/index/index.html [运行时间：3.528075s][吞吐率：0.28req/s] [内存消耗：2,532.13kb] [文件加载：65]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.003389s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/index/index_html' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] web\user\controller\Index->index[ D:\qw\f3d\web\user\controller\Index.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../web/user\view\default\index\index.html [ array (
+  0 => 'SYS_TITLE',
+  1 => 'is_admin',
+  2 => '_CONTROLLER_NAME',
+  3 => '_ADDON_NAME',
+  4 => 'PUBLIC_HEADER',
+  5 => 'loadDataAction',
+  6 => 'addon_id',
+  7 => 'page',
+  8 => 'page_nav',
+  9 => 'filter',
+  10 => 'login_user_name',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.575186s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.380200s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = ''  AND `controller` = 'index' LIMIT 1 [ RunTime:0.379482s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=0 order by order_index asc,id asc [ RunTime:0.382864s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=1 order by order_index asc,id asc [ RunTime:0.381230s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=2 order by order_index asc,id asc [ RunTime:0.385980s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=5 order by order_index asc,id asc [ RunTime:0.392377s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=116 order by order_index asc,id asc [ RunTime:0.379175s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:12:26+08:00 ] 127.0.0.1 127.0.0.1 GET /user/member/index/addon/member.html?_pjax=%23main_container
+[ info ] f3d.com/user/member/index/addon/member.html?_pjax=%23main_container [运行时间：1.768676s][吞吐率：0.57req/s] [内存消耗：2,569.28kb] [文件加载：66]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004190s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'addons',
+    1 => 'AddonsExecute',
+    2 => 'run',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/index/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-pjax-container' => '#main_container',
+  'x-pjax' => 'true',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'text/html, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/member/index/addon/member_html' => '',
+  '_pjax' => '#main_container',
+  'module' => 'user',
+  'controller' => 'member',
+  'action' => 'index',
+  'addon' => 'member',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\addons\controller\AddonsExecute->run[ D:\qw\f3d\web\addons\controller\AddonsExecute.php(242) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] addons\member\user\controller\Member->index[ D:\qw\f3d\addons\member\user\controller\Member.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../addons/member\user\view\default\member\index.html [ array (
+  0 => 'is_admin',
+  1 => '_CONTROLLER_NAME',
+  2 => '_ADDON_NAME',
+  3 => 'PUBLIC_HEADER',
+  4 => 'loadDataAction',
+  5 => 'addon_id',
+  6 => 'page',
+  7 => 'page_nav',
+  8 => 'filter',
+  9 => 'login_user_name',
+  10 => 'is_auth',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.566048s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.376973s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = 'member'  AND `controller` = 'member' LIMIT 1 [ RunTime:0.376049s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:12:29+08:00 ] 127.0.0.1 127.0.0.1 GET /user/member/loadList/addon/member?page=1&rows=20
+[ info ] f3d.com/user/member/loadList/addon/member?page=1&rows=20 [运行时间：2.587810s][吞吐率：0.39req/s] [内存消耗：2,604.38kb] [文件加载：70]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004221s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'addons',
+    1 => 'AddonsExecute',
+    2 => 'run',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/member/index/addon/member.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/member/loadList/addon/member' => '',
+  'page' => '1',
+  'rows' => '20',
+  'module' => 'user',
+  'controller' => 'member',
+  'action' => 'loadList',
+  'addon' => 'member',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\addons\controller\AddonsExecute->run[ D:\qw\f3d\web\addons\controller\AddonsExecute.php(242) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] addons\member\user\controller\Member->loadList[ D:\qw\f3d\addons\member\user\controller\Member.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.579896s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select count(*) c from tp_member_account where 1=1  and (  1 = 1 ) [ RunTime:0.369351s ]
+[ sql ] [ SQL ] select id,status,rule_id,coin_id,coin_name,winner_rate,team_rate,fund_rate,drop_total_amount,total_buy_seconds,total_amount,pool_total_amount,release_total_amount,start_time,end_game_time from (select a.* ,b.coin_name from tp_fomo_game a ,tp_coins b where a.status=1 and a.coin_id=b.id) as tab limit 0,1 [ RunTime:0.472407s ]
+[ sql ] [ SQL ] select a.*,ifnull(count(b.id),0) recommend2  from (select a.*,ifnull(count(b.id),0) recommend1,GROUP_CONCAT(b.id) ids  from (select a.*,ifnull(token,0) token_total from (select a.*,ifnull(count(game_id),0) game_count from (select a.*,ifnull(sum(key_num),0) key_total from (select a.*,ifnull(sum(key_num),0) now_key_num from (select a.*,ifnull(sum(b.amount),0) reward_total from (select a.*,ifnull(b.amount,0) balance from (select * from (select tab.*,c.username as invite_user_name from tp_member_account as tab left join tp_member_account c on tab.pid=c.id) t where   1 = 1 ) a left join tp_member_balance b on a.id = b.user_id and coin_id =1) a left join tp_fomo_reward_record b on a.id = b.user_id group by a.id) a left join tp_fomo_key_record b on a.id = b.user_id and b.game_id = 168 group by a.id) a left join tp_fomo_key_record b on a.id = b.user_id group by a.id) a left join tp_fomo_key_record b on a.id = b.user_id group by a.id) a left join tp_fomo_token_record b on a.id = b.user_id) a left join tp_member_account b on a.id = b.pid group by a.id) a left join tp_member_account b on b.pid in(a.ids) group by a.id order by register_time desc limit 0,20 [ RunTime:0.668971s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:13:09+08:00 ] 127.0.0.1 127.0.0.1 GET /user/parameter/index/addon/config.html
+[ info ] f3d.com/user/parameter/index/addon/config.html [运行时间：2.400192s][吞吐率：0.42req/s] [内存消耗：2,590.89kb] [文件加载：67]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004490s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'addons',
+    1 => 'AddonsExecute',
+    2 => 'run',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/member/index/addon/member.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/parameter/index/addon/config_html' => '',
+  'module' => 'user',
+  'controller' => 'parameter',
+  'action' => 'index',
+  'addon' => 'config',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\addons\controller\AddonsExecute->run[ D:\qw\f3d\web\addons\controller\AddonsExecute.php(242) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] addons\config\user\controller\Parameter->index[ D:\qw\f3d\addons\config\user\controller\Parameter.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../addons/config\user\view\default\parameter\index.html [ array (
+  0 => 'SYS_TITLE',
+  1 => 'is_admin',
+  2 => '_CONTROLLER_NAME',
+  3 => '_ADDON_NAME',
+  4 => 'PUBLIC_HEADER',
+  5 => 'loadDataAction',
+  6 => 'addon_id',
+  7 => 'page',
+  8 => 'page_nav',
+  9 => 'filter',
+  10 => 'login_user_name',
+  11 => 'BASE_LIST',
+  12 => 'BASE_POPUP',
+  13 => 'BASE_POPUP_FORM',
+  14 => 'BASE_INDEX',
+  15 => 'id',
+  16 => 'param_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.538345s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.359683s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = 'config'  AND `controller` = 'parameter' LIMIT 1 [ RunTime:0.360224s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_sys_parameter` [ RunTime:0.378139s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`remark`,`field_name`,`control_type`,`parameter_val` FROM `tp_sys_parameter` ORDER BY order_index,id asc [ RunTime:0.360660s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:13:10+08:00 ] 127.0.0.1 127.0.0.1 GET /user/parameter/loadData/addon/config?id=1
+[ info ] f3d.com/user/parameter/loadData/addon/config?id=1 [运行时间：1.143643s][吞吐率：0.87req/s] [内存消耗：2,394.01kb] [文件加载：63]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004638s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'addons',
+    1 => 'AddonsExecute',
+    2 => 'run',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/parameter/index/addon/config.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/parameter/loadData/addon/config' => '',
+  'id' => '1',
+  'module' => 'user',
+  'controller' => 'parameter',
+  'action' => 'loadData',
+  'addon' => 'config',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\addons\controller\AddonsExecute->run[ D:\qw\f3d\web\addons\controller\AddonsExecute.php(242) : eval()'d code(2) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] addons\config\user\controller\Parameter->loadData[ D:\qw\f3d\addons\config\user\controller\Parameter.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.640836s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from tp_sys_parameter order by id desc [ RunTime:0.435454s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:14:10+08:00 ] 127.0.0.1 127.0.0.1 GET /user/login/logout.html
+[ info ] f3d.com/user/login/logout.html [运行时间：0.055048s][吞吐率：18.17req/s] [内存消耗：1,642.21kb] [文件加载：54]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004097s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/member/index/addon/member.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login/logout_html' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->logout[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:14:11+08:00 ] 127.0.0.1 127.0.0.1 GET /user/login/index.html
+[ info ] f3d.com/user/login/index.html [运行时间：0.047320s][吞吐率：21.13req/s] [内存消耗：1,693.27kb] [文件加载：55]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/member/index/addon/member.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login/index_html' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../web/user\view\default\login\index.html [ array (
+  0 => 'SYS_TITLE',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:14:11+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] f3d.com/captcha.html [运行时间：0.068904s][吞吐率：14.51req/s] [内存消耗：1,342.28kb] [文件加载：43]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.007350s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\qw\f3d\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:14:21+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login/index.html
+[ info ] f3d.com/user/login/index.html [运行时间：0.947457s][吞吐率：1.06req/s] [内存消耗：2,262.10kb] [文件加载：61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.002470s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '37',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login/index_html' => '',
+  'username' => 'admin',
+  'password' => 'slq111',
+  'code' => '3',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.542409s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='11a9926f2696af0b56daf0636adec422' [ RunTime:0.355810s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:14:21+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha?id=1541344461
+[ info ] f3d.com/captcha?id=1541344461 [运行时间：0.078878s][吞吐率：12.68req/s] [内存消耗：1,342.25kb] [文件加载：43]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.006529s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\qw\f3d\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:14:26+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login/index.html
+[ info ] f3d.com/user/login/index.html [运行时间：0.989664s][吞吐率：1.01req/s] [内存消耗：2,262.10kb] [文件加载：61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.003084s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '38',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login/index_html' => '',
+  'username' => 'admin',
+  'password' => 'slq1112',
+  'code' => '3',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.562041s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='cd2ce6333050506015626bc8a38e64a8' [ RunTime:0.369616s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:14:26+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha?id=1541344466
+[ info ] f3d.com/captcha?id=1541344466 [运行时间：0.051898s][吞吐率：19.27req/s] [内存消耗：1,342.25kb] [文件加载：43]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.003600s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\qw\f3d\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-04T23:14:35+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login/index.html
+[ info ] f3d.com/user/login/index.html [运行时间：1.136169s][吞吐率：0.88req/s] [内存消耗：2,309.77kb] [文件加载：62]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.002882s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://f3d.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '37',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/login/index_html' => '',
+  'username' => 'admin',
+  'password' => 'lkw998',
+  'code' => '3',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] web\user\controller\Login->index[ D:\qw\f3d\web\user\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.643038s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='01a668ed75d6c2c15c4402a3a668f8a8' [ RunTime:0.410697s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:14:38+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/index.html
+[ info ] f3d.com/user/index/index.html [运行时间：3.351414s][吞吐率：0.30req/s] [内存消耗：2,391.14kb] [文件加载：63]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run web\common\behavior\Init @app_init [ RunTime:0.004461s ]
+[ info ] [ LANG ] D:\qw\f3d\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qf0e5q1a2rae3nc96n3l9im1c1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://f3d.com/user/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'f3d.com',
+)
+[ info ] [ PARAM ] array (
+  '/user/index/index_html' => '',
+)
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] web\user\controller\Index->index[ D:\qw\f3d\web\user\controller\Index.php ]
+[ info ] [ VIEW ] D:\qw\f3d\public/../web/user\view\default\index\index.html [ array (
+  0 => 'SYS_TITLE',
+  1 => 'is_admin',
+  2 => '_CONTROLLER_NAME',
+  3 => '_ADDON_NAME',
+  4 => 'PUBLIC_HEADER',
+  5 => 'loadDataAction',
+  6 => 'addon_id',
+  7 => 'page',
+  8 => 'page_nav',
+  9 => 'filter',
+  10 => 'login_user_name',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.582140s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.376876s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = ''  AND `controller` = 'index' LIMIT 1 [ RunTime:0.375246s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=0 order by order_index asc,id asc [ RunTime:0.385895s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=1 order by order_index asc,id asc [ RunTime:0.377924s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=2 order by order_index asc,id asc [ RunTime:0.381701s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=5 order by order_index asc,id asc [ RunTime:0.382420s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=116 order by order_index asc,id asc [ RunTime:0.374136s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:15:49+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:3.724565s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.389202s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = ''  AND `controller` = 'index' LIMIT 1 [ RunTime:0.394600s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=0 order by order_index asc,id asc [ RunTime:0.388645s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=1 order by order_index asc,id asc [ RunTime:0.688095s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=2 order by order_index asc,id asc [ RunTime:1.266454s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=5 order by order_index asc,id asc [ RunTime:1.272508s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=116 order by order_index asc,id asc [ RunTime:0.389008s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:16:39+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:1.722784s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='01a668ed75d6c2c15c4402a3a668f8a8' [ RunTime:0.365405s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:16:43+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.573112s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.381754s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = ''  AND `controller` = 'index' LIMIT 1 [ RunTime:0.386499s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=0 order by order_index asc,id asc [ RunTime:0.380638s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=1 order by order_index asc,id asc [ RunTime:0.379246s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=2 order by order_index asc,id asc [ RunTime:0.380723s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=5 order by order_index asc,id asc [ RunTime:0.378392s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=116 order by order_index asc,id asc [ RunTime:0.384743s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:17:06+08:00 ] 127.0.0.1 127.0.0.1 POST /user/login/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.731950s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] select id,role_id,username,is_admin,logic_delete from tp_user_account a where username='admin' and password='01a668ed75d6c2c15c4402a3a668f8a8' [ RunTime:0.376782s ]
+---------------------------------------------------------------
+[ 2018-11-04T23:17:10+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.576356s ] mysql:dbname=fomo3d;host=45.77.68.204;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user_nav_menu` [ RunTime:0.386035s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `tp_user_nav_menu` WHERE  `addon` = ''  AND `controller` = 'index' LIMIT 1 [ RunTime:0.395663s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=0 order by order_index asc,id asc [ RunTime:0.390370s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=1 order by order_index asc,id asc [ RunTime:0.489770s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=2 order by order_index asc,id asc [ RunTime:0.383401s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=5 order by order_index asc,id asc [ RunTime:0.384440s ]
+[ sql ] [ SQL ] select id,title,addon,controller,action,target,dialog_width,dialog_height from tp_user_nav_menu where allow=1 and pid=116 order by order_index asc,id asc [ RunTime:0.392978s ]
