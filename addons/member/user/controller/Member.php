@@ -25,6 +25,7 @@ class Member extends \web\user\controller\AddonUserBase{
         {
             $filter .= ' and phone like \'%' . $phone . '%\'';
         }
+//        print_r($filter);exit();
         $m = new \addons\member\model\MemberAccountModel();
         $total = $m->getTotal($filter);
         $rows = $m->getUserList($this->getPageIndex(), $this->getPageSize(), $filter, 'register_time desc');

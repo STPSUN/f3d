@@ -18,18 +18,22 @@ class Trade extends \web\user\controller\AddonUserBase{
         $keyword = $this->_get('keyword');
         $status = $this->_get('status');
         $type = $this->_get('type');
-        $filter = 'status='.$status;
+//        $status = 3;
+        $filter = 'o.status='.$status;
         if($type != ''){
-            $filter .= ' and type='.$type;
+            $filter .= ' and o.type='.$type;
         }
         if ($keyword != null) {
-            $filter .= ' and b.username like \'%' . $keyword . '%\'';
+//            $filter .= ' and b.username like \'%' . $keyword . '%\'';
+            $filter .= ' and m.username like \'%' . $keyword . '%\'';
         }
         $m = new \addons\eth\model\EthTradingOrder();
-        $total = $m->getTotal($filter);
-        $rows = $m->getList($this->getPageIndex(), $this->getPageSize(), $filter);
-        $count_total = $m->getCountTotal($filter);
-        return $this->toTotalDataGrid($total, $rows,$count_total);
+//        $m = new \addons\member\model\MemberAccountModel();
+        $total = $m->getTotal2($filter);
+        $rows = $m->getList2($this->getPageIndex(), $this->getPageSize(), $filter);
+//        print_r($rows);exit();
+//        $count_total = $m->getCountTotal($filter);
+        return $this->toDataGrid($total, $rows);
     }
 
     /**
@@ -72,7 +76,7 @@ class Trade extends \web\user\controller\AddonUserBase{
                 if($ret['success']){
                     $tradeM->startTrans();
                     //更新订单txhash
-                    $has_update = $tradeM->updateStatus($id, 3, NOW_DATETIME, $ret['data'], '创建交易hash成功');
+                    $has_update = $tradeM->updateStatus($id, 1, NOW_DATETIME, $ret['data'], '创建交易hash成功');
                     if(empty($has_update)){
                         return $this->failData('更新订单txhash失败');
                     }
