@@ -4,15 +4,13 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '45.77.68.204',
+    'hostname'        => '127.0.0.1',
     // 数据库名
     'database'        => 'fomo3d',
     // 用户名
     'username'        => 'fomo3d',
     // 密码
     'password'        => 'RSeMD7Xm6jLeYdLm',
-//    'hostname'        => '127.0.0.1',
-//    'hostname'        => '107.174.247.122',
     // 数据库名
 //    'database'        => 'f3d',
 //     用户名
