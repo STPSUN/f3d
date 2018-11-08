@@ -59,7 +59,6 @@ class Crontab extends \web\common\controller\Controller {
         set_time_limit(0);
         $queueM = new \addons\fomo\model\BonusSequeue();
         $sequeue_list = $queueM->getUnAllSendData(1000);
-//        dump($sequeue_list);exit;
         if (!empty($sequeue_list)) {
             foreach($sequeue_list as $k => $data){
                 try {
@@ -123,8 +122,6 @@ class Crontab extends \web\common\controller\Controller {
                 $rate = $this->getUserRate($total_key, $key_num);
                 $_amount = $amount * $rate;
 
-                $_amount = $this->getAmount($user_id,$_amount,$game_id);
-
                 //添加余额, 添加分红记录
                 $balance = $balanceM->updateBalance($user_id, $_amount, $coin_id, true);
                 if ($balance != false) {
@@ -135,33 +132,6 @@ class Crontab extends \web\common\controller\Controller {
             }
         }
         return true;
-    }
-
-    /**
-     * 获取用户分红余额（封顶）
-     * @param $user_id
-     * @param $amount
-     */
-    private function getAmount($user_id,$amount,$game_id)
-    {
-        $keyRecordM = new \addons\fomo\model\KeyRecord();
-        $eth_num = $keyRecordM->where(['game_id' => $game_id, 'user_id' => $user_id])->sum('eth');
-
-        $m = new \addons\member\model\MemberAccountModel();
-        $bonus_limit = $m->where('id='.$this->user_id)->value('bonus_limit');
-        $bonus_limit_num = null;
-        if($bonus_limit > 0){
-            $bonus_limit_num = $eth_num * $bonus_limit; // 投注额 * 封顶限制倍数
-            $total_amount = $eth_num + $amount;
-            if($total_amount < $bonus_limit_num)
-            {
-                return $amount;
-            }else
-            {
-                $amount = $bonus_limit_num - $total_amount;
-                return $amount;
-            }
-        }
     }
 
     /**
