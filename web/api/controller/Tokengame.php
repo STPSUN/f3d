@@ -16,7 +16,7 @@ class Tokengame extends \web\api\controller\ApiBase {
         $data['total_token_amount'] = $total_token_amount; //P3D总额
 
         $rewardRecordM = new \addons\fomo\model\RewardRecord();
-        $total_token_bonus = $rewardRecordM->where(['user_id' => $this->user_id, 'type' => 0])->sum('amount');
+        $total_token_bonus = $rewardRecordM->where(['user_id' => $this->user_id, 'remark' => '福利之岛投注分红'])->sum('amount');
         $data['total_token_bonus'] = empty($total_token_bonus) ? 0 : $total_token_bonus; // P3D奖励总额，福利之岛累计分红
         $data['token_float'] = $m->getValByName('token_float');
         $data['sale_tax'] = $m->getValByName('sale_tax');
